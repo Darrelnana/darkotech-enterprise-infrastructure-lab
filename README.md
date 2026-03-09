@@ -102,7 +102,24 @@ Configured:
 - Share permissions
 
 ---
+## Active Directory Security Groups
 
+Role-based access control was implemented using Active Directory security groups.
+
+Departments were separated into dedicated groups to control access to resources.
+
+Groups created:
+
+- Finance_Users
+- HR_Users
+- IT_Admins
+- Helpdesk_Team
+
+These groups are used to control permissions on shared folders and systems.
+
+### Active Directory Groups
+
+![Active Directory Groups](screenshots/active-directory-security-groups.png)
 ## Group Policy Automation
 
 Configured Group Policy Objects to enforce organizational security policies.
