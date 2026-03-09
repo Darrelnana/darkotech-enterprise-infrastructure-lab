@@ -33,6 +33,17 @@ LAN (192.168.1.0/24)
    │
 ├── DC01 (Active Directory + DNS)
 └── PC01 (Domain Workstation)
+## Proxmox Virtual Environment
+
+The infrastructure runs inside Proxmox VE which hosts the virtual machines used in the lab.
+
+- DC01 (Active Directory Domain Controller)
+- PC01 (Domain Workstation)
+- pfSense Firewall
+
+### Proxmox Dashboard
+
+![Proxmox Dashboard](screenshots/proxmox-dashboard.png)
 
 ---
 
