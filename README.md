@@ -59,6 +59,21 @@ The infrastructure runs inside Proxmox VE which hosts the virtual machines used 
 - Configured WAN and LAN interfaces
 - Enabled DHCP for the internal network
 - Verified internet connectivity through firewall routing
+## pfSense Firewall
+
+A pfSense firewall was deployed to simulate a corporate network gateway and control traffic between the WAN and internal LAN.
+
+Features configured:
+
+- WAN and LAN interfaces
+- Internal LAN network (192.168.1.0/24)
+- DHCP services
+- Firewall routing between WAN and LAN
+- Internet access for internal devices
+
+### pfSense Dashboard
+
+![pfSense Dashboard](screenshots/pfsense-dashboard.png)
 
 ### Active Directory
 - Installed Active Directory Domain Services
