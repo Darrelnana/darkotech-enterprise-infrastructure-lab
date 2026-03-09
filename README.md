@@ -129,6 +129,24 @@ Password Policy:
 - Complexity: Enabled
 - Expiration: 90 days
 
+  ## Password Security Policy
+
+Group Policy was used to enforce strong password policies across the domain.
+
+Configured settings:
+
+- Minimum password length: 12 characters
+- Password complexity: Enabled
+- Password expiration: 90 days
+- Password history: 10 previous passwords remembered
+- Minimum password age: 1 day
+
+These settings help protect against brute-force and password reuse attacks.
+
+### Password Policy Configuration
+
+![Password Policy](screenshots/group-policy-password-policy.png)
+
 Account Lockout Policy:
 - Lock account after 5 failed login attempts
 
