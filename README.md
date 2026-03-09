@@ -100,7 +100,28 @@ Shared Folders:
 Configured:
 - NTFS permissions
 - Share permissions
+## Department File Shares
 
+A centralized file share was created on the domain controller to simulate company department storage.
+
+Folder structure:
+
+CompanyFiles
+├── HR
+├── Finance
+└── IT
+
+Access is controlled using Active Directory security groups:
+
+- HR_Users → Access to HR folder
+- Finance_Users → Access to Finance folder
+- IT_Admins → Administrative access
+
+Both **NTFS permissions** and **Share permissions** were configured to enforce least privilege access.
+
+### Shared Folder Permissions
+
+![Shared Folder Permissions](screenshots/shared-folder-permissions.png)
 ---
 ## Active Directory Security Groups
 
