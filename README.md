@@ -188,7 +188,9 @@ Enabled auditing for:
 - Policy changes
 
 Monitoring performed using Windows Event Viewer.
+## Network Architecture
 
+![Network Architecture](diagrams/network-architecture.png)
 ---
 
 ## Future Improvements
