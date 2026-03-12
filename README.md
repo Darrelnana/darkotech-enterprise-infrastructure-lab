@@ -245,7 +245,24 @@ Logs are reviewed using Windows Event Viewer to detect potential security incide
 
 ![Network Architecture](diagrams/network-architecture.png)
 ---
+## Skills Demonstrated
 
+Active Directory administration
+
+Identity and access management
+
+Firewall configuration
+
+VLAN network segmentation
+
+Group Policy security management
+
+Role-based access control (RBAC)
+
+Enterprise network architecture
+
+Virtualization with Proxmox
+---
 ## Future Improvements
 
 Planned upgrades to the lab environment include:
