@@ -16,10 +16,6 @@ The goal of this lab is to build hands-on experience with identity management, n
 - Managed Network Switch (Netgear GS308E)
 
 ---
-## Network Architecture
-
-![Network Architecture](diagrams/network-architecture.png)
----
 ## Infrastructure Components
 
 | System | Role |
@@ -45,7 +41,10 @@ Internet
 → pfSense Firewall  
 → VLAN Segmented Internal Networks
 ---
+## Network Architecture
 
+![Network Architecture](diagrams/network-architecture.png)
+---
 ## Proxmox Virtual Environment
 
 The infrastructure runs inside Proxmox VE which hosts the virtual machines used in the lab.
