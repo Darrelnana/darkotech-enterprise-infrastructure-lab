@@ -16,23 +16,42 @@ The goal of this lab is to build hands-on experience with identity management, n
 - Managed Network Switch (Netgear GS308E)
 
 ---
+## Infrastructure Components
+
+| System | Role |
+|------|------|
+| Proxmox VE | Virtualization platform |
+| pfSense | Firewall and router |
+| DC01 | Primary Domain Controller |
+| DC02 | Secondary Domain Controller |
+| PC01 | Domain workstation |
+---
 
 ## Lab Architecture
+
+The lab simulates a segmented enterprise network environment.
 
 Internet
    │
 Home Router
    │
-Managed Switch
+Managed Switch (Netgear GS308E)
    │
 Proxmox Hypervisor
    │
 pfSense Firewall
    │
-LAN (192.168.1.0/24)
+Trunk Network
    │
-├── DC01 (Active Directory + DNS)
-└── PC01 (Domain Workstation)
+├── VLAN 20 – Servers (192.168.20.0/24)
+│      ├── DC01 – Primary Domain Controller
+│      └── DC02 – Secondary Domain Controller
+│
+├── VLAN 30 – Workstations (192.168.30.0/24)
+│      └── PC01 – Domain Workstation
+│
+└── VLAN 40 – Guest Network (192.168.40.0/24)
+       └── Isolated Guest Devices
 ## Proxmox Virtual Environment
 
 The infrastructure runs inside Proxmox VE which hosts the virtual machines used in the lab.
@@ -81,6 +100,18 @@ Features configured:
 - Configured DNS services
 - Joined workstation PC01 to the domain
 
+## Network Segmentation (VLANs)
+
+To simulate an enterprise network architecture, VLAN segmentation was implemented using the pfSense firewall.
+
+| VLAN | Network | Purpose |
+|-----|-----|-----|
+| 20 | 192.168.20.0/24 | Infrastructure Servers |
+| 30 | 192.168.30.0/24 | Domain Workstations |
+| 40 | 192.168.40.0/24 | Guest Network |
+
+Each VLAN has dedicated firewall rules to control traffic between network segments.
+
 ---
 
 ## Access Control
@@ -123,6 +154,25 @@ Both **NTFS permissions** and **Share permissions** were configured to enforce l
 
 ![Shared Folder Permissions](screenshots/shared-folder-permissions.png)
 ---
+## Active Directory Infrastructure
+
+Active Directory Domain Services was deployed to simulate enterprise identity management.
+
+Domain:
+darkotech.local
+
+Domain Controllers:
+
+DC01 – Primary Domain Controller
+DC02 – Secondary Domain Controller
+
+Services configured:
+
+Active Directory Domain Services
+DNS
+Domain authentication
+Active Directory replication between controllers
+
 ## Active Directory Security Groups
 
 Role-based access control was implemented using Active Directory security groups.
@@ -180,14 +230,17 @@ Drive Mapping:
 
 ## Security Monitoring
 
-Enabled auditing for:
+Audit logging was enabled to monitor authentication activity within the domain.
 
-- Login events
-- Failed login attempts
-- Account lockouts
-- Policy changes
+Events monitored:
 
-Monitoring performed using Windows Event Viewer.
+Successful logins
+Failed login attempts
+Account lockouts
+Policy changes
+
+Logs are reviewed using Windows Event Viewer to detect potential security incidents.
+
 ## Network Architecture
 
 ![Network Architecture](diagrams/network-architecture.png)
@@ -197,7 +250,8 @@ Monitoring performed using Windows Event Viewer.
 
 Planned upgrades to the lab environment include:
 
-- VLAN network segmentation
-- Additional servers
-- Monitoring dashboards
-- Security attack simulations
+Security monitoring with a SIEM (Wazuh or Splunk)
+Centralized log collection
+Kali Linux penetration testing VM
+Additional internal servers (File server / Web server)
+Security attack simulations
