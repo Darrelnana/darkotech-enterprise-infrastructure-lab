@@ -31,31 +31,21 @@ The goal of this lab is to build hands-on experience with identity management, n
 | PC01 | Domain workstation |
 ---
 
+
 ## Lab Architecture
 
-The lab simulates a segmented enterprise network environment.
+The DarkoTech lab simulates a segmented enterprise network environment running on a virtualized infrastructure.
 
-Internet
-   │
-Home Router
-   │
-Managed Switch (Netgear GS308E)
-   │
-Proxmox Hypervisor
-   │
-pfSense Firewall
-   │
-Trunk Network
-   │
-├── VLAN 20 – Servers (192.168.20.0/24)
-│      ├── DC01 – Primary Domain Controller
-│      └── DC02 – Secondary Domain Controller
-│
-├── VLAN 30 – Workstations (192.168.30.0/24)
-│      └── PC01 – Domain Workstation
-│
-└── VLAN 40 – Guest Network (192.168.40.0/24)
-       └── Isolated Guest Devices
+### Network Flow
+
+Internet  
+→ Home Router  
+→ Managed Switch (Netgear GS308E)  
+→ Proxmox Hypervisor  
+→ pfSense Firewall  
+→ VLAN Segmented Internal Networks
+---
+
 ## Proxmox Virtual Environment
 
 The infrastructure runs inside Proxmox VE which hosts the virtual machines used in the lab.
