@@ -16,6 +16,10 @@ The goal of this lab is to build hands-on experience with identity management, n
 - Managed Network Switch (Netgear GS308E)
 
 ---
+## Network Architecture
+
+![Network Architecture](diagrams/network-architecture.png)
+---
 ## Infrastructure Components
 
 | System | Role |
@@ -241,9 +245,6 @@ Policy changes
 
 Logs are reviewed using Windows Event Viewer to detect potential security incidents.
 
-## Network Architecture
-
-![Network Architecture](diagrams/network-architecture.png)
 ---
 ## Skills Demonstrated
 
