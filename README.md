@@ -45,6 +45,16 @@ Internet
 
 ![Network Architecture](diagrams/network-architecture.png)
 ---
+## Network Segmentation
+
+The internal network is segmented using VLANs configured on the pfSense firewall.
+
+| VLAN | Network | Purpose |
+|-----|-----|-----|
+| VLAN 20 | 192.168.20.0/24 | Infrastructure Servers |
+| VLAN 30 | 192.168.30.0/24 | Domain Workstations |
+| VLAN 40 | 192.168.40.0/24 | Guest Network |
+---
 ## Proxmox Virtual Environment
 
 The infrastructure runs inside Proxmox VE which hosts the virtual machines used in the lab.
