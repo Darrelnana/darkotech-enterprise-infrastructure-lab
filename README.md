@@ -289,7 +289,7 @@ These logs allow monitoring of:
 
 Real-time web traffic monitoring was implemented using NGINX access logs.
 
-Command used:
+**Command used**
 
 ```bash
 sudo tail -f /var/log/nginx/access.log
