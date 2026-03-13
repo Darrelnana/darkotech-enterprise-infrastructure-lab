@@ -25,6 +25,7 @@ The goal of this lab is to build hands-on experience with identity management, n
 | DC01 | Primary Domain Controller |
 | DC02 | Secondary Domain Controller |
 | PC01 | Domain workstation |
+| Ubuntu Server | Linux web server and reverse proxy |
 ---
 
 
@@ -245,30 +246,69 @@ Policy changes
 Logs are reviewed using Windows Event Viewer to detect potential security incidents.
 
 ---
+## Linux Infrastructure
+
+A Linux server was deployed to simulate modern web infrastructure services.
+
+### Ubuntu Server
+
+An Ubuntu Server VM was deployed inside the Proxmox hypervisor and configured for remote administration.
+
+Features configured:
+
+- SSH remote administration
+- Web server hosting
+- Reverse proxy configuration
+- Log monitoring
+
+### Remote Administration
+
+The server is managed remotely using SSH.
+
+---
+
+### Web Infrastructure
+
+NGINX was deployed as a reverse proxy to route incoming web traffic to backend services.
+
+---
+
+### Log Monitoring
+
+Server activity is monitored using NGINX log files:
+/var/log/nginx/access.log
+/var/log/nginx/error.log
+
+These logs allow monitoring of:
+
+- incoming web requests
+- server errors
+- abnormal traffic patterns
+---
 ## Skills Demonstrated
 
-Active Directory administration
+This lab demonstrates hands-on experience with:
 
-Identity and access management
-
-Firewall configuration
-
-VLAN network segmentation
-
-Group Policy security management
-
-Role-based access control (RBAC)
-
-Enterprise network architecture
+- Virtualization using Proxmox
+- Enterprise firewall configuration with pfSense
+- VLAN network segmentation
+- Active Directory identity management
+- Role-based access control (RBAC)
+- Group Policy security management
+- Linux server administration
+- NGINX reverse proxy configuration
+- SSH remote server administration
+- Web server hosting
+- Log monitoring and troubleshooting
 
 Virtualization with Proxmox
 ---
 ## Future Improvements
 
-Planned upgrades to the lab environment include:
+Planned upgrades for the lab include:
 
-Security monitoring with a SIEM (Wazuh or Splunk)
-Centralized log collection
-Kali Linux penetration testing VM
-Additional internal servers (File server / Web server)
-Security attack simulations
+- Infrastructure monitoring using Prometheus
+- Grafana dashboards for system metrics
+- Kali Linux security testing environment
+- Centralized logging and SIEM tools
+- Secure DMZ network for public services
