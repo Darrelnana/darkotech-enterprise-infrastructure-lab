@@ -284,6 +284,16 @@ These logs allow monitoring of:
 - incoming web requests
 - server errors
 - abnormal traffic patterns
+
+### Log Monitoring
+
+Real-time web traffic monitoring was implemented using NGINX access logs.
+
+Command used:
+
+```bash
+sudo tail -f /var/log/nginx/access.log
+![Log Monitoring](screenshots/nginx-log-monitoring.png)
 ---
 ## Skills Demonstrated
 
