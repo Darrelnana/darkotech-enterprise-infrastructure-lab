@@ -293,6 +293,8 @@ Real-time web traffic monitoring was implemented using NGINX access logs.
 
 ```bash
 sudo tail -f /var/log/nginx/access.log
+
+### Log Monitoring
 ![Log Monitoring](screenshots/nginx-log-monitoring.png)
 ---
 ## Skills Demonstrated
